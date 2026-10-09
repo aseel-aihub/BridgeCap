@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+  BridgeCap
+  Author: Aseel
+  (c) 2026 Aseel. All rights reserved.
+  Do not copy or reuse this code or idea without written permission.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Security rule: only load files from this project (no outside scripts). -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+    <meta name="referrer" content="no-referrer">
+
+    <!-- Author signature -->
+    <meta name="author" content="Aseel">
+    <meta name="copyright" content="(c) 2026 Aseel. All rights reserved.">
+
+    <title>BridgeCap - Industry Linked Capstone Platform | by Aseel</title>
+
+    <!-- Icons are saved inside the project (vendor folder), not from a CDN. -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/solid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ===== Top bar ===== -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-bridge" aria-hidden="true"></i>
+            <h2>Bridge<span>Cap</span></h2>
+            <span class="tag">EdTech</span>
+        </div>
+
+        <!-- Buttons to switch between the 4 portals (events are added in app.js). -->
+        <nav class="view-toggle" aria-label="Portals">
+            <button type="button" class="toggle-btn active" id="btnStudentView" data-view="student">
+                <i class="fa-solid fa-user-graduate" aria-hidden="true"></i> Student
+            </button>
+            <button type="button" class="toggle-btn" id="btnCompanyView" data-view="company">
+                <i class="fa-solid fa-building" aria-hidden="true"></i> Industry Mentor
+            </button>
+            <button type="button" class="toggle-btn" id="btnFacultyView" data-view="faculty">
+                <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i> Faculty / Admin
+            </button>
+            <button type="button" class="toggle-btn" id="btnAnalyticsView" data-view="analytics">
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i> University / Ministry
+            </button>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <!-- ===== 1) Student portal ===== -->
+        <section id="studentPortal" class="portal-section active-portal">
+            <div class="dashboard-header">
+                <h1>Student Capstone Dashboard</h1>
+                <p>Select your skills to run the matching engine against industry challenges (demo data).</p>
+            </div>
+
+            <div class="grid-layout">
+                <div class="card sidebar-card">
+                    <h3><i class="fa-solid fa-sliders" aria-hidden="true"></i> Your Skill Matrix</h3>
+                    <p class="subtitle">Select your top technical competencies:</p>
+                    <div class="skills-selector" id="skillsSelector"></div>
+                    <button type="button" class="btn-primary" id="btnRunMatch">
+                        <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Run Skill-Match
+                    </button>
+                </div>
+
+                <div class="card content-card">
+                    <h3><i class="fa-solid fa-bullseye" aria-hidden="true"></i> Recommended Industry Challenges</h3>
+                    <div id="challengesList" class="challenges-list" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== 2) Industry mentor portal ===== -->
+        <section id="companyPortal" class="portal-section">
+            <div class="dashboard-header">
+                <h1>Industry Mentor Dashboard</h1>
+                <p>Review matched candidates, form a balanced team, and grant industry approval.</p>
+            </div>
+
+            <div class="card spaced-card">
+                <label class="subtitle select-label" for="companySelect">Viewing as:</label>
+                <select id="companySelect" class="company-select"></select>
+            </div>
+
+            <div id="companyChallenges"></div>
+        </section>
+
+        <!-- ===== 3) Faculty portal ===== -->
+        <section id="facultyPortal" class="portal-section">
+            <div class="dashboard-header">
+                <h1>Faculty / Admin Dashboard</h1>
+                <p>Dual approval: a team only becomes active once both the academic supervisor and the industry mentor approve it. Approved teams get a GP1/GP2 milestone tracker.</p>
+            </div>
+            <div id="facultyList"></div>
+        </section>
+
+        <!-- ===== 4) University / Ministry portal ===== -->
+        <section id="analyticsPortal" class="portal-section">
+            <div class="dashboard-header">
+                <h1>University / Ministry Analytics</h1>
+                <p>Skills-gap overview across every registered student and posted challenge.</p>
+            </div>
+
+            <div class="stats-row" id="statsRow"></div>
+
+            <div class="card top-gap">
+                <h3><i class="fa-solid fa-chart-bar" aria-hidden="true"></i> Skills Gap (avg. demand vs. avg. supply)</h3>
+                <p class="subtitle">Skills sorted by largest gap: where demand is higher than student level.</p>
+                <div id="skillsGapChart" class="skills-gap-chart"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== Footer + signature ===== -->
+    <footer class="site-footer">
+        <p>BridgeCap — designed &amp; developed by <strong>Aseel</strong></p>
+        <p>&copy; 2026 Aseel. All rights reserved.</p>
+        <p dir="rtl" lang="ar">منصة جسر — تصميم وتطوير <strong>أسيل</strong> — جميع الحقوق محفوظة</p>
+        <p class="footer-note">All companies, students and numbers here are fictional demo data.</p>
+        <p class="footer-note" dir="rtl" lang="ar">جميع الشركات والطلاب والأرقام هنا بيانات خيالية للعرض فقط.</p>
+        <button type="button" class="btn-reset" id="btnReset">Reset demo data</button>
+    </footer>
+
+    <!-- Order matters: data -> logic -> storage -> UI. -->
+    <script src="js/data.js"></script>
+    <script src="js/match.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

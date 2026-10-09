@@ -1,0 +1,6 @@
+# files we don't upload
+.DS_Store
+__MACOSX/
+*.log
+node_modules/
+.venv/

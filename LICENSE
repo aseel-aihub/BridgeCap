@@ -1,0 +1,17 @@
+Copyright (c) 2026 Aseel. All rights reserved.
+حقوق النشر (c) 2026 أسيل. جميع الحقوق محفوظة.
+
+BridgeCap (منصة جسر) — source code, design, and documentation.
+
+This repository is shared for viewing and evaluation only (e.g. competition
+judging and academic review). No license is granted to copy, modify, publish,
+distribute, sublicense, sell, or use this code, its design, or the BridgeCap
+platform concept, in whole or in part, without prior written permission from
+the author.
+
+هذا المستودع معروض للاطلاع والتقييم فقط (مثل تحكيم المسابقات والمراجعة
+الأكاديمية). لا يُسمح بنسخ الكود أو التصميم أو فكرة منصة جسر أو تعديلها أو
+نشرها أو بيعها أو استخدامها، كلياً أو جزئياً، بدون إذن مكتوب مسبق من المؤلفة.
+
+Third-party component: Font Awesome Free (vendor/fontawesome) is used under
+its own license, included in vendor/fontawesome/LICENSE.txt.
