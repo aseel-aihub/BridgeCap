@@ -7,9 +7,10 @@ A prototype platform that links graduation projects (capstones) to real industry
 منصة تربط مشاريع التخرج بتحديات حقيقية من الشركات: تحسب توافق مهارات الطالب مع التحدي، وتكوّن فريق متوازن، وتشترط اعتماد المشرف الأكاديمي ومرشد الشركة قبل بدء المشروع.
 
 > All companies, students and challenges in this prototype are **fictional** demo data. No real company or partnership is represented.
+> 
 > جميع الشركات والطلاب والتحديات هنا **خيالية** للعرض فقط.
 
-## Four portals | البوابات الأربع
+## Four portals 
 
 | Portal | What it does | الوظيفة |
 |---|---|---|
@@ -18,21 +19,21 @@ A prototype platform that links graduation projects (capstones) to real industry
 | **Faculty / Admin** | Academic approval, then a GP1/GP2 milestone tracker | الاعتماد الأكاديمي ثم متابعة مراحل GP1/GP2 |
 | **University / Ministry** | Skills-gap analytics (supply vs. demand per skill) | تحليل فجوة المهارات (العرض مقابل الطلب) |
 
-## How the matching works | كيف يشتغل التوافق
+## How the matching works 
 
 - **Match score** — cosine similarity between the student's skill vector and the challenge's required skills (`js/match.js`)
 - **Explainable** — shows which required skills are covered vs. missing
 - **Balanced team** — greedy method: each step adds the student who covers the most of what is still needed
 - **Skills gap** — average student level vs. average required level for each skill
 
-## Security | الأمان
+## Security 
 
 - No `innerHTML` with data — all text is added with `textContent` (prevents XSS)
 - Content-Security-Policy: only the project's own scripts, styles and fonts can load
 - No CDN: icons are stored locally in `vendor/`
 - Saved browser data is checked and cleaned before use (bad or edited data is ignored)
 
-## Stack & run | التقنيات والتشغيل
+## Stack & run 
 
 Vanilla HTML / CSS / JavaScript — no build step, no backend, data saved in the browser (`localStorage`).
 
@@ -41,7 +42,7 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-## Structure | هيكل المشروع
+## Structure 
 
 ```
 index.html
