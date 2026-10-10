@@ -1,4 +1,4 @@
-# BridgeCap | منصة جسر
+# Wakib | واكِب
 
 **Author / المؤلفة: Aseel** — © 2026 Aseel. All rights reserved. See [LICENSE](LICENSE).
 
@@ -55,4 +55,4 @@ vendor/fontawesome/  — local icons (Font Awesome Free, own license)
 ```
 
 ---
-© 2026 Aseel — BridgeCap | منصة جسر. All rights reserved.
+© 2026 Aseel — Wakib | واكِب. All rights reserved.

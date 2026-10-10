@@ -1,5 +1,5 @@
 /*
- * BridgeCap
+ * Wakib
  * Author: Aseel
  * (c) 2026 Aseel. All rights reserved.
  *
@@ -9,7 +9,7 @@
 
 "use strict";
 
-const STORAGE_KEY = "bridgecap_state_v2";
+const STORAGE_KEY = "wakib_state_v1";
 
 // Save data. try/catch because saving can fail (private mode or full storage).
 function saveState(state) {
@@ -17,7 +17,7 @@ function saveState(state) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     return true;
   } catch (err) {
-    console.warn("BridgeCap: could not save data", err);
+    console.warn("Wakib: could not save data", err);
     return false;
   }
 }
@@ -29,7 +29,7 @@ function loadState() {
     if (!raw) return null;
     return JSON.parse(raw);
   } catch (err) {
-    console.warn("BridgeCap: saved data is broken, starting fresh", err);
+    console.warn("Wakib: saved data is broken, starting fresh", err);
     return null;
   }
 }
@@ -38,8 +38,10 @@ function loadState() {
 function clearState() {
   try {
     localStorage.removeItem(STORAGE_KEY);
-    localStorage.removeItem("bridgecap_state_v1"); // old version key
+    // old keys from when the project was called BridgeCap
+    localStorage.removeItem("bridgecap_state_v2");
+    localStorage.removeItem("bridgecap_state_v1");
   } catch (err) {
-    console.warn("BridgeCap: could not clear data", err);
+    console.warn("Wakib: could not clear data", err);
   }
 }

@@ -1,5 +1,5 @@
 /*
- * BridgeCap
+ * Wakib
  * Author: Aseel
  * (c) 2026 Aseel. All rights reserved.
  * Do not copy or reuse this code or idea without written permission.
@@ -595,7 +595,7 @@ function init() {
   switchView("student");
 
   // Signature in the browser console.
-  console.info("BridgeCap | منصة جسر — (c) 2026 Aseel. All rights reserved.");
+  console.info("Wakib | واكِب — (c) 2026 Aseel. All rights reserved.");
 }
 
 init();
