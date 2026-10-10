@@ -8,7 +8,9 @@ A prototype platform that links graduation projects (capstones) to real industry
 
 > All companies, students and challenges in this prototype are **fictional** demo data. No real company or partnership is represented.
 > 
-> جميع الشركات والطلاب والتحديات هنا **خيالية** للعرض فقط.
+> جميع الشركات والطلاب والتحديات هنا **خيالية** للعرض فقط
+
+Live Site: https://aseel-aihub.github.io/Wakib/
 
 ## Four portals 
 
