@@ -2,7 +2,7 @@
 
 **Author / المؤلفة: Aseel** — © 2026 Aseel. All rights reserved. See [LICENSE](LICENSE).
 
-A prototype platform that links graduation projects (capstones) to real industry challenges, built for Tuwaiq Clubs' *"برنامج بناء المشاريع التقنية"* (Al Garage).
+A prototype platform that links graduation projects (capstones) to real industry challenges
 
 منصة تربط مشاريع التخرج بتحديات حقيقية من الشركات: تحسب توافق مهارات الطالب مع التحدي، وتكوّن فريق متوازن، وتشترط اعتماد المشرف الأكاديمي ومرشد الشركة قبل بدء المشروع.
 
